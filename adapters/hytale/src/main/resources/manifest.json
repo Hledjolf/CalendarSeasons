@@ -2,7 +2,7 @@
   "Group": "Hledjolf",
   "Name": "CalendarSeasons",
   "Version": "${version}",
-  "Description": "A named calendar for your world: /date, seasons, and an optional line at each dawn. Choose a preset (harvest, Gregorian, Old Norse, Japanese) or write your own months.",
+  "Description": "A named calendar for your world: /date, seasons, and an optional line at each dawn. Choose a preset (Gregorian, harvest, Old Norse) or write your own months.",
   "Authors": [
     { "Name": "Hledjolf" }
   ],
