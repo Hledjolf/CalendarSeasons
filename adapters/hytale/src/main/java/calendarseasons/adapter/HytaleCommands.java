@@ -5,6 +5,8 @@ import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractAsyncCommand;
+import com.hypixel.hytale.server.core.Constants;
+import com.hypixel.hytale.server.core.modules.singleplayer.SingleplayerModule;
 import com.hypixel.hytale.server.core.permissions.PermissionsModule;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -42,6 +44,8 @@ final class HytaleCommands extends AbstractAsyncCommand {
     }
 
     private static boolean mayEdit(CommandContext context) {
+        // Vanilla's admin commands let the singleplayer owner through even though they aren't an operator.
+        if (Constants.SINGLEPLAYER && SingleplayerModule.isOwner(context.sender().getUuid())) return true;
         PermissionsModule perms = PermissionsModule.get();
         return perms != null && perms.hasPermission(context.sender().getUuid(), DateCommands.PERMISSION);
     }
