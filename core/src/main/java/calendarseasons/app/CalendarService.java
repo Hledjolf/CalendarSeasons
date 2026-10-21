@@ -31,7 +31,7 @@ public final class CalendarService {
     private final List<Consumer<String>> broadcastListeners = new CopyOnWriteArrayList<>();
 
     private Settings settings = Settings.defaults();
-    private CalendarDef calendar = Presets.load(Presets.HARVEST);
+    private CalendarDef calendar = Presets.load(Presets.DEFAULT);
     private State state = State.fresh();
     /** The last dawn key seen (world dawns, or real local days); null until the first tick. */
     private Long lastDawnKey;
@@ -83,19 +83,19 @@ public final class CalendarService {
         if (!Objects.equals(oldMode, settings.mode())) lastDawnKey = null; // a mode switch is not a dawn
     }
 
-    /** The calendar for these settings; an invalid custom calendar falls back to harvest with one log line. */
+    /** The calendar for these settings; an invalid custom calendar falls back to the default calendar with one log line. */
     static CalendarDef buildCalendar(Settings s, Out out) {
         if (Presets.CUSTOM.equals(s.preset())) {
             List<String> problems = CalendarDef.problems(s.customMonths(), s.customWeekdays());
             if (problems.isEmpty()) return CalendarDef.of(Presets.CUSTOM, s.customMonths(), s.customWeekdays(), true, null);
-            out.warn("[CalendarSeasons] the custom calendar can't be used (" + String.join("; ", problems) + "); using the harvest calendar instead");
-            return Presets.load(Presets.HARVEST);
+            out.warn("[CalendarSeasons] the custom calendar can't be used (" + String.join("; ", problems) + "); using the " + Presets.DEFAULT + " calendar instead");
+            return Presets.load(Presets.DEFAULT);
         }
         try {
             return Presets.load(s.preset());
         } catch (IllegalArgumentException e) {
-            out.warn("[CalendarSeasons] preset " + s.preset() + " is broken (" + e.getMessage() + "); using harvest");
-            return Presets.load(Presets.HARVEST);
+            out.warn("[CalendarSeasons] preset " + s.preset() + " is broken (" + e.getMessage() + "); using " + Presets.DEFAULT);
+            return Presets.load(Presets.DEFAULT);
         }
     }
 

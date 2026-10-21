@@ -11,9 +11,11 @@ import java.util.List;
  */
 public final class Presets {
     public static final String HARVEST = "harvest";
+    /** The preset used when nothing valid is configured. */
+    public static final String DEFAULT = "gregorian";
     public static final String CUSTOM = "custom";
     /** The bundled preset ids, in menu order (custom is not a file). */
-    public static final List<String> IDS = List.of(HARVEST, "gregorian", "norse", "japanese");
+    public static final List<String> IDS = List.of("gregorian", HARVEST, "norse");
 
     private Presets() {}
 

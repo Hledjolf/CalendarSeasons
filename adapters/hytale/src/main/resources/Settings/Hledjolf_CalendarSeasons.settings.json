@@ -15,11 +15,11 @@
 
     "Calendar.Preset": {
       "label": "Calendar",
-      "description": "harvest: an invented eight-month farming calendar of 45-day months, the default. gregorian: the real-world months, without leap years. norse: the twelve Old Icelandic months, with the four-day summer week Sumarauki, and two seasons, winter and summer. japanese: the traditional Japanese month names, with four seasons. custom: the months and weekdays listed under Calendar in this mod's config file, which you edit by hand; if they're invalid, the server log says why and the harvest calendar is used instead.",
+      "description": "gregorian: the real-world months, without leap years, the default. harvest: an invented eight-month farming calendar of 45-day months. norse: the twelve Old Icelandic months, with the four-day summer week Sumarauki, and two seasons, winter and summer. custom: the months and weekdays listed under Calendar in this mod's config file, which you edit by hand; if they're invalid, the server log says why and the gregorian calendar is used instead.",
       "section": "calendar",
       "type": "enum",
-      "options": ["harvest", "gregorian", "norse", "japanese", "custom"],
-      "default": "harvest",
+      "options": ["gregorian", "harvest", "norse", "custom"],
+      "default": "gregorian",
       "restart": false
     },
     "Calendar.EpochYear": {

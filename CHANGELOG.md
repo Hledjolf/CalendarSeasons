@@ -5,7 +5,7 @@
 First release.
 
 - `/date`, `/date season`, `/date months` and `/date set <day> <month> [year]`. Setting the date needs operator status or the `calendarseasons.set` permission.
-- Five calendars: `harvest` (invented, the default), `gregorian`, `norse` (Old Icelandic), `japanese`, and `custom`, from your own list of months and weekdays. Presets are data files inside the jar.
+- Four calendars: `gregorian` (the default), `harvest` (invented), `norse` (Old Icelandic), and `custom`, from your own list of months and weekdays. Presets are data files inside the jar.
 - Two clocks:
   - `world-days`, where the calendar turns at each sunrise in the default world;
   - `real-time`, which follows the real date at a fixed UTC offset.

@@ -28,7 +28,7 @@ public record Settings(
     public static final int VERSION = 1;
     public static final String WORLD_DAYS = "world-days";
     public static final String REAL_TIME = "real-time";
-    public static final List<String> PRESETS = List.of("harvest", "gregorian", "norse", "japanese", "custom");
+    public static final List<String> PRESETS = List.of("gregorian", "harvest", "norse", "custom");
     public static final List<String> MODES = List.of(WORLD_DAYS, REAL_TIME);
     public static final long EPOCH_YEAR_MIN = -9999, EPOCH_YEAR_MAX = 9999;
     public static final double RATE_MIN = 0.001, RATE_MAX = 100;
@@ -44,7 +44,7 @@ public record Settings(
 
     /** The defaults, as written to a new {@code config.json}. */
     public static Settings defaults() {
-        return new Settings(VERSION, "harvest", 1, "Year {year}",
+        return new Settings(VERSION, Presets.DEFAULT, 1, "Year {year}",
             List.of(new CalendarDef.Month("Thaw", 45, "Spring"), new CalendarDef.Month("Sowing", 45, "Spring")),
             List.of("Moonday", "Tideday", "Windsday", "Thunderday", "Fireday", "Starday", "Sunday"),
             WORLD_DAYS, 1.0, DEFAULT_REAL_EPOCH, 0.0,
@@ -59,7 +59,8 @@ public record Settings(
         List<String> fixes = new ArrayList<>();
         String p = preset == null ? null : preset.strip().toLowerCase(java.util.Locale.ROOT);
         if (!PRESETS.contains(p)) {
-            fixes.add("Calendar.Preset \"" + preset + "\" is not one of " + PRESETS + "; using harvest");
+            if ("japanese".equals(p)) fixes.add("Calendar.Preset \"japanese\" was removed in 1.0.0; using " + Presets.DEFAULT + " (choose one of " + PRESETS + ")");
+            else fixes.add("Calendar.Preset \"" + preset + "\" is not one of " + PRESETS + "; using " + Presets.DEFAULT);
             p = d.preset;
         }
         String m = mode == null ? null : mode.strip().toLowerCase(java.util.Locale.ROOT);
