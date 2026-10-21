@@ -7,7 +7,7 @@ A small server mod for Hytale that gives your world a named calendar. Ask `/date
 - **Any speed:** from one calendar day per thousand in-game days to a hundred calendar days per in-game day.
 - **Server-side only.** Players need nothing installed.
 
-Built for Hytale 0.7.2 (Early Access). MIT licensed.
+Built for Hytale 0.7.3 (Early Access). MIT licensed.
 
 ## Install
 
