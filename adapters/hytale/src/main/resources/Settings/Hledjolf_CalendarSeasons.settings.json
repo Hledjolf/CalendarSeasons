@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/Hledjolf/ModSettingsManager/main/schema/settings-sidecar.schema.json",
+  "title": "Calendar & Seasons",
   "format": 1,
   "plugin": "Hledjolf:CalendarSeasons",
   "config": "config.json",
