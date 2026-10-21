@@ -40,12 +40,12 @@ tasks.register("release") {
 }
 
 // ---------------------------------------------------------------------------------------------------------
-// checkNoProjectMarks: no published file (tracked files, the jar, the mod page text) may name the author's
-// unrelated projects. The words are assembled at run time so that this file doesn't match itself.
+// checkNoProjectMarks: no published file (tracked files, the jar, the mod page text) may contain
+// blocked terms. The words are assembled at run time so that this file doesn't match itself.
 // ---------------------------------------------------------------------------------------------------------
 val checkNoProjectMarks = tasks.register("checkNoProjectMarks") {
     group = "verification"
-    description = "Fails if a tracked or shipped file names one of the author's unrelated projects."
+    description = "Fails if a tracked or shipped file contains a blocked term."
     dependsOn(":adapters:hytale:jar")
     val jarFile = project(":adapters:hytale").tasks.named<Jar>("jar").flatMap { it.archiveFile }
     val root = projectDir
