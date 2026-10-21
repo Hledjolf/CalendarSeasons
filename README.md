@@ -2,7 +2,7 @@
 
 A small server mod for Hytale that gives your world a named calendar. Ask `/date` and get an answer like "Sunnudagr, Góa 14, Year 3, Winter". Seasons have names and are announced when they change, and an optional line greets each dawn.
 
-- **Five calendars:** an invented eight-month harvest calendar (the default), the Gregorian months, the Old Icelandic months, the traditional Japanese month names, or your own months and weekdays.
+- **Five calendars:** an invented eight-month harvest calendar (the default), the Gregorian months, the Old Icelandic months, the traditional Japanese month names (romanized), or your own months and weekdays.
 - **Two clocks:** the calendar turns at each sunrise in the world, or it follows the real date.
 - **Any speed:** from one calendar day per thousand in-game days to a hundred calendar days per in-game day.
 - **Server-side only.** Players need nothing installed.
@@ -32,10 +32,12 @@ The server console can run every command.
 | `harvest` (default) | Thaw, Sowing, Greening, Highsun, Reaping, Gathering, Frostfall, Deepwinter: 45 days each, so a year is 360 days | Spring, Summer, Autumn, Winter, two months each |
 | `gregorian` | January to December, without leap years (365 days) | The northern meteorological seasons: winter is December to February |
 | `norse` | The twelve Old Icelandic months, from Gormánuður to Haustmánuður: 30 days each, plus the four-day *Sumarauki* after Sólmánuður (364 days) | Winter (Gormánuður to Einmánuður) and Summer (Harpa to Haustmánuður) |
-| `japanese` | 睦月, 如月, 弥生, 卯月, 皐月, 水無月, 文月, 葉月, 長月, 神無月, 霜月, 師走, with the Gregorian month lengths | 春, 夏, 秋, 冬, following the traditional assignment (睦月 to 弥生 is spring) |
+| `japanese` | Mutsuki, Kisaragi, Yayoi, Uzuki, Satsuki, Minazuki, Fumizuki, Hazuki, Nagatsuki, Kannazuki, Shimotsuki, Shiwasu (romanized), with the Gregorian month lengths | Haru, Natsu, Aki, Fuyu, following the traditional assignment (Mutsuki to Yayoi is spring) |
 | `custom` | Your list under `Calendar.CustomMonths` | Whatever each month's `Season` says |
 
-The weekdays are invented for `harvest` (Moonday, Tideday and so on), English for `gregorian`, Old Icelandic for `norse` (Sunnudagr to Laugardagr) and 月火水木金土日 for `japanese`.
+The weekdays are invented for `harvest` (Moonday, Tideday and so on), English for `gregorian`, Old Icelandic for `norse` (Sunnudagr to Laugardagr) and Getsuyōbi to Nichiyōbi for `japanese`.
+
+**Fonts.** The in-game font covers Latin (with accents), Greek and Cyrillic. Month, weekday or season names outside those show as boxes; that is a Hytale font limitation, not something the mod can fix. The `japanese` preset is romanized for this reason.
 
 ### Your own calendar
 
@@ -116,7 +118,7 @@ Calendar & Seasons doesn't need Mod Settings Manager. Without it, edit `config.j
 - No leap years, moons or holidays.
 - One calendar for the whole server; no per-world calendars.
 - The seasons are names only: they don't change the weather or the crops.
-- Whether CJK month names display in chat depends on the game client's font.
+- The in-game font covers Latin (with accents), Greek and Cyrillic. Custom month, weekday or season names outside those show as boxes; that is a Hytale font limitation. The `japanese` preset is romanized for this reason.
 
 ## License
 

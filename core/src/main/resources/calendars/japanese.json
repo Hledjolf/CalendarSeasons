@@ -1,21 +1,21 @@
 {
   "Id": "japanese",
-  "Name": "Traditional Japanese month names",
+  "Name": "Traditional Japanese month names (romanized)",
   "Months": [
-    { "Name": "睦月", "Days": 31, "Season": "春" },
-    { "Name": "如月", "Days": 28, "Season": "春" },
-    { "Name": "弥生", "Days": 31, "Season": "春" },
-    { "Name": "卯月", "Days": 30, "Season": "夏" },
-    { "Name": "皐月", "Days": 31, "Season": "夏" },
-    { "Name": "水無月", "Days": 30, "Season": "夏" },
-    { "Name": "文月", "Days": 31, "Season": "秋" },
-    { "Name": "葉月", "Days": 31, "Season": "秋" },
-    { "Name": "長月", "Days": 30, "Season": "秋" },
-    { "Name": "神無月", "Days": 31, "Season": "冬" },
-    { "Name": "霜月", "Days": 30, "Season": "冬" },
-    { "Name": "師走", "Days": 31, "Season": "冬" }
+    { "Name": "Mutsuki", "Days": 31, "Season": "Haru" },
+    { "Name": "Kisaragi", "Days": 28, "Season": "Haru" },
+    { "Name": "Yayoi", "Days": 31, "Season": "Haru" },
+    { "Name": "Uzuki", "Days": 30, "Season": "Natsu" },
+    { "Name": "Satsuki", "Days": 31, "Season": "Natsu" },
+    { "Name": "Minazuki", "Days": 30, "Season": "Natsu" },
+    { "Name": "Fumizuki", "Days": 31, "Season": "Aki" },
+    { "Name": "Hazuki", "Days": 31, "Season": "Aki" },
+    { "Name": "Nagatsuki", "Days": 30, "Season": "Aki" },
+    { "Name": "Kannazuki", "Days": 31, "Season": "Fuyu" },
+    { "Name": "Shimotsuki", "Days": 30, "Season": "Fuyu" },
+    { "Name": "Shiwasu", "Days": 31, "Season": "Fuyu" }
   ],
-  "Weekdays": ["月", "火", "水", "木", "金", "土", "日"],
+  "Weekdays": ["Getsuyōbi", "Kayōbi", "Suiyōbi", "Mokuyōbi", "Kin'yōbi", "Doyōbi", "Nichiyōbi"],
   "Ordinals": "none",
-  "SeasonAnnouncement": "{season}が来ました。"
+  "SeasonAnnouncement": "{season} ga kimashita."
 }
