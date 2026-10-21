@@ -1,0 +1,153 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Hledjolf/ModSettingsManager/main/schema/settings-sidecar.schema.json",
+  "format": 1,
+  "plugin": "Hledjolf:CalendarSeasons",
+  "config": "config.json",
+  "sections": [
+    { "id": "calendar", "label": "Calendar", "description": "Which months and weekdays the world uses, and how years are numbered." },
+    { "id": "clock", "label": "Clock", "description": "What moves the calendar forward, and how fast." },
+    { "id": "display", "label": "Display", "description": "How /date and the announcements write the date." },
+    { "id": "announce", "label": "Announcements", "description": "Chat lines sent to every player." }
+  ],
+  "keys": {
+    "Version": { "hidden": true },
+
+    "Calendar.Preset": {
+      "label": "Calendar",
+      "description": "harvest: an invented eight-month farming calendar of 45-day months, the default. gregorian: the real-world months, without leap years. norse: the twelve Old Icelandic months, with the four-day summer week Sumarauki, and two seasons, winter and summer. japanese: the traditional Japanese month names, with four seasons. custom: the months and weekdays listed under Calendar in this mod's config file, which you edit by hand; if they're invalid, the server log says why and the harvest calendar is used instead.",
+      "section": "calendar",
+      "type": "enum",
+      "options": ["harvest", "gregorian", "norse", "japanese", "custom"],
+      "default": "harvest",
+      "restart": false
+    },
+    "Calendar.EpochYear": {
+      "label": "First year number",
+      "description": "The number of the calendar's first year. Negative years are allowed.",
+      "section": "calendar",
+      "type": "int",
+      "min": -9999, "max": 9999, "step": 1,
+      "default": 1,
+      "restart": false
+    },
+    "Calendar.YearLabel": {
+      "label": "Year label",
+      "description": "How a year is written. {year} is the number, for example \"{year} AR\".",
+      "section": "calendar",
+      "type": "string",
+      "default": "Year {year}",
+      "restart": false
+    },
+    "Calendar.CustomMonths": {
+      "label": "Custom months",
+      "description": "Used when Calendar is custom. Edit the config file: a list of { Name, Days, Season }.",
+      "section": "calendar"
+    },
+    "Calendar.CustomWeekdays": {
+      "label": "Custom weekdays",
+      "description": "Used when Calendar is custom. Edit the config file: a list of names.",
+      "section": "calendar"
+    },
+
+    "Clock.Mode": {
+      "label": "Clock",
+      "description": "world-days: the calendar turns at each sunrise in the world. real-time: it follows the real date.",
+      "section": "clock",
+      "type": "enum",
+      "options": ["world-days", "real-time"],
+      "default": "world-days",
+      "restart": false
+    },
+    "Clock.CalendarDaysPerWorldDay": {
+      "label": "Calendar days per day",
+      "description": "0.25: one calendar day every four in-game days. 4: four calendar days per in-game day. In real-time mode, per real day.",
+      "section": "clock",
+      "type": "float",
+      "min": 0.001, "max": 100,
+      "default": 1.0,
+      "restart": false
+    },
+    "Clock.RealTimeEpochMillis": {
+      "label": "Real-time start (Unix ms)",
+      "description": "Real-time mode only: the moment the calendar's first day began, in milliseconds since 1970 (UTC). Each step is one day.",
+      "section": "clock",
+      "type": "int",
+      "min": 0, "max": 4102444800000, "step": 86400000,
+      "default": 1767225600000,
+      "restart": false
+    },
+    "Clock.UtcOffsetHours": {
+      "label": "UTC offset (hours)",
+      "description": "Real-time mode only: when the day changes. -5 for New York in winter, 5.75 for Nepal. Daylight saving time is not followed.",
+      "section": "clock",
+      "type": "float",
+      "min": -12, "max": 14, "step": 0.25,
+      "default": 0.0,
+      "restart": false
+    },
+
+    "Display.DateFormat": {
+      "label": "Date format",
+      "description": "How /date and the announcements write the date. {monthName} is the month's name, {month} its number and {month2} its number with two digits. {day} and {day2} are the day of the month, {dayOfYear} the day of the year, {year} the year's number and {yearLabel} the year label. {weekday} and {season} appear only when their switches below are on, and {ordinal} adds st, nd, rd or th.",
+      "section": "display",
+      "type": "enum",
+      "options": [
+        "{monthName} {day}, {yearLabel}",
+        "{day} {monthName} {yearLabel}",
+        "{weekday}, {monthName} {day}, {yearLabel}",
+        "{weekday} {day} {monthName}",
+        "{day}/{month}/{year}",
+        "{month}/{day}/{year}",
+        "{year}-{month2}-{day2}",
+        "{day}. {monthName} {year}",
+        "Day {dayOfYear} of {yearLabel}",
+        "{monthName} {day}",
+        "{season}, {monthName} {day}",
+        "{day}{ordinal} of {monthName}, {yearLabel}"
+      ],
+      "default": "{monthName} {day}, {yearLabel}",
+      "restart": false
+    },
+    "Display.ShowWeekday": {
+      "label": "Show weekday",
+      "description": "Adds the weekday in front of the date.",
+      "section": "display",
+      "type": "bool",
+      "default": true,
+      "restart": false
+    },
+    "Display.ShowSeason": {
+      "label": "Show season",
+      "description": "Adds the season after the date.",
+      "section": "display",
+      "type": "bool",
+      "default": true,
+      "restart": false
+    },
+
+    "Display.Announce.AtDawn": {
+      "label": "Announce each dawn",
+      "description": "Sends the dawn message at every sunrise (in real-time mode, at local midnight).",
+      "section": "announce",
+      "type": "bool",
+      "default": false,
+      "restart": false
+    },
+    "Display.Announce.SeasonChange": {
+      "label": "Announce new seasons",
+      "description": "Sends one line, such as \"Summer has come.\", on the first dawn of a new season.",
+      "section": "announce",
+      "type": "bool",
+      "default": true,
+      "restart": false
+    },
+    "Display.Announce.Template": {
+      "label": "Dawn message",
+      "description": "{date} is the date, written with the date format above.",
+      "section": "announce",
+      "type": "string",
+      "default": "Dawn breaks: {date}",
+      "restart": false
+    }
+  }
+}

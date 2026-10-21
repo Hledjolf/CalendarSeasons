@@ -1,0 +1,21 @@
+{
+  "Id": "norse",
+  "Name": "Old Icelandic months",
+  "Months": [
+    { "Name": "Gormánuður", "Days": 30, "Season": "Winter" },
+    { "Name": "Ýlir", "Days": 30, "Season": "Winter" },
+    { "Name": "Mörsugur", "Days": 30, "Season": "Winter" },
+    { "Name": "Þorri", "Days": 30, "Season": "Winter" },
+    { "Name": "Góa", "Days": 30, "Season": "Winter" },
+    { "Name": "Einmánuður", "Days": 30, "Season": "Winter" },
+    { "Name": "Harpa", "Days": 30, "Season": "Summer" },
+    { "Name": "Skerpla", "Days": 30, "Season": "Summer" },
+    { "Name": "Sólmánuður", "Days": 30, "Season": "Summer" },
+    { "Name": "Sumarauki", "Days": 4, "Season": "Summer" },
+    { "Name": "Heyannir", "Days": 30, "Season": "Summer" },
+    { "Name": "Tvímánuður", "Days": 30, "Season": "Summer" },
+    { "Name": "Haustmánuður", "Days": 30, "Season": "Summer" }
+  ],
+  "Weekdays": ["Sunnudagr", "Mánadagr", "Týsdagr", "Óðinsdagr", "Þórsdagr", "Frjádagr", "Laugardagr"],
+  "Ordinals": "english"
+}

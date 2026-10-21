@@ -1,0 +1,16 @@
+{
+  "Id": "harvest",
+  "Name": "Harvest calendar (invented)",
+  "Months": [
+    { "Name": "Thaw", "Days": 45, "Season": "Spring" },
+    { "Name": "Sowing", "Days": 45, "Season": "Spring" },
+    { "Name": "Greening", "Days": 45, "Season": "Summer" },
+    { "Name": "Highsun", "Days": 45, "Season": "Summer" },
+    { "Name": "Reaping", "Days": 45, "Season": "Autumn" },
+    { "Name": "Gathering", "Days": 45, "Season": "Autumn" },
+    { "Name": "Frostfall", "Days": 45, "Season": "Winter" },
+    { "Name": "Deepwinter", "Days": 45, "Season": "Winter" }
+  ],
+  "Weekdays": ["Moonday", "Tideday", "Windsday", "Thunderday", "Fireday", "Starday", "Sunday"],
+  "Ordinals": "english"
+}
