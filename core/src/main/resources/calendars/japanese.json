@@ -1,0 +1,21 @@
+{
+  "Id": "japanese",
+  "Name": "Traditional Japanese month names",
+  "Months": [
+    { "Name": "睦月", "Days": 31, "Season": "春" },
+    { "Name": "如月", "Days": 28, "Season": "春" },
+    { "Name": "弥生", "Days": 31, "Season": "春" },
+    { "Name": "卯月", "Days": 30, "Season": "夏" },
+    { "Name": "皐月", "Days": 31, "Season": "夏" },
+    { "Name": "水無月", "Days": 30, "Season": "夏" },
+    { "Name": "文月", "Days": 31, "Season": "秋" },
+    { "Name": "葉月", "Days": 31, "Season": "秋" },
+    { "Name": "長月", "Days": 30, "Season": "秋" },
+    { "Name": "神無月", "Days": 31, "Season": "冬" },
+    { "Name": "霜月", "Days": 30, "Season": "冬" },
+    { "Name": "師走", "Days": 31, "Season": "冬" }
+  ],
+  "Weekdays": ["月", "火", "水", "木", "金", "土", "日"],
+  "Ordinals": "none",
+  "SeasonAnnouncement": "{season}が来ました。"
+}

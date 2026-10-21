@@ -1,0 +1,20 @@
+{
+  "Id": "gregorian",
+  "Name": "Gregorian months (no leap years)",
+  "Months": [
+    { "Name": "January", "Days": 31, "Season": "Winter" },
+    { "Name": "February", "Days": 28, "Season": "Winter" },
+    { "Name": "March", "Days": 31, "Season": "Spring" },
+    { "Name": "April", "Days": 30, "Season": "Spring" },
+    { "Name": "May", "Days": 31, "Season": "Spring" },
+    { "Name": "June", "Days": 30, "Season": "Summer" },
+    { "Name": "July", "Days": 31, "Season": "Summer" },
+    { "Name": "August", "Days": 31, "Season": "Summer" },
+    { "Name": "September", "Days": 30, "Season": "Autumn" },
+    { "Name": "October", "Days": 31, "Season": "Autumn" },
+    { "Name": "November", "Days": 30, "Season": "Autumn" },
+    { "Name": "December", "Days": 31, "Season": "Winter" }
+  ],
+  "Weekdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  "Ordinals": "english"
+}
